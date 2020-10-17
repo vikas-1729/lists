@@ -10,20 +10,20 @@ class ListItem extends Component {
     const { lists } = this.props;
     let listChecked = findCheckedItem(lists);
     return (
-      <div className="list">
+      <div className="list-right-side">
         {listChecked.map((list, mainIndex) => {
           return (
-            <div className="list-item-right" key={mainIndex}>
+            <div className="list-item" key={mainIndex}>
               <header>{list.headerName}</header>
               <ul className="list-item-content">
                 {list.values.map((value, index) => {
                   return (
-                    <li className="list-item-value" key={index}>
+                    <li className="list-item-value-right" key={index}>
                       <div className="content">{value.name}</div>
                       <div className="img-container">
                         <img
-                          height="25"
-                          width="25"
+                          height="20"
+                          width="20"
                           src="https://www.flaticon.com/svg/static/icons/svg/109/109602.svg"
                           alt="cross"
                           onClick={() => {

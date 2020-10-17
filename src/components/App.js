@@ -1,9 +1,9 @@
-import React from "react";
-import { List, ListItem } from "./index";
+import React from 'react';
+import { List, ListItem } from './index';
 
 function App() {
   return (
-    <div className="main-container">
+    <div id="main-container">
       <div className="left-div">
         <List />
       </div>

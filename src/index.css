@@ -12,3 +12,52 @@ code {
     monospace;
 }
 
+#main-container {
+  display: flex;
+  justify-content: space-between;
+}
+.left-div {
+  width: 50%;
+  border: 2px solid black;
+}
+.left-div .list {
+  padding: 5px;
+}
+header {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+.list-item-content {
+  padding: 0px;
+}
+.list-item-value {
+  list-style: none;
+  margin-top: 5px;
+  padding: 5px;
+}
+input[type='checkbox'] {
+  width: 80px;
+}
+.list-item-value label {
+  margin-left: 10px;
+  font-size: 1.2rem;
+  word-spacing: normal;
+}
+
+/**right side**/
+.right-div {
+  width: 48%;
+}
+
+.list-item-value-right {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.img-container {
+  margin-right: 20px;
+}
+.img-container:hover {
+  cursor: pointer;
+}
