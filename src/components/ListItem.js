@@ -1,21 +1,36 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { makeFalse } from '../action';
 
 class ListItem extends Component {
+  makeFalse = (mainIndex, index) => {
+    this.props.dispatch(makeFalse(mainIndex, index));
+  };
   render() {
     const { lists } = this.props;
     let listChecked = findCheckedItem(lists);
     return (
       <div className="list">
-        {listChecked.map((list, index) => {
+        {listChecked.map((list, mainIndex) => {
           return (
-            <div className="list-item-right" key={index}>
+            <div className="list-item-right" key={mainIndex}>
               <header>{list.headerName}</header>
               <ul className="list-item-content">
                 {list.values.map((value, index) => {
                   return (
                     <li className="list-item-value" key={index}>
                       <div className="content">{value.name}</div>
+                      <div className="img-container">
+                        <img
+                          height="25"
+                          width="25"
+                          src="https://www.flaticon.com/svg/static/icons/svg/109/109602.svg"
+                          alt="cross"
+                          onClick={() => {
+                            this.makeFalse(list.mainIndex, value.index);
+                          }}
+                        />
+                      </div>
                     </li>
                   );
                 })}
@@ -34,7 +49,7 @@ function findCheckedItem(lists) {
     let tempArr = [];
     let mainIndex = index;
     listItem.values.map((value, index) => {
-      if (value.checked === false) {
+      if (value.checked) {
         tempArr.push({
           name: value.name,
           index: index,

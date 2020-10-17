@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { toggle } from '../action';
 
 class List extends Component {
-  handleToogle = (index) => {
-    console.log('index', index);
+  handleToogle = (mainIndex, index) => {
+    this.props.dispatch(toggle(mainIndex, index));
   };
   render() {
     const { lists } = this.props;
@@ -15,9 +16,9 @@ class List extends Component {
 
     return (
       <div className="list">
-        {lists.map((list, index) => {
+        {lists.map((list, mainIndex) => {
           return (
-            <div className="list-item-left" key={index}>
+            <div className="list-item-left" key={mainIndex}>
               <header>{list.listName}</header>
               <ul className="list-item-content">
                 {list.values.map((value, index) => {
@@ -25,9 +26,10 @@ class List extends Component {
                     <li className="list-item-value" key={index}>
                       <input
                         type="checkbox"
-                        onClick={() => {
-                          this.handleToogle(index);
+                        onChange={() => {
+                          this.handleToogle(mainIndex, index);
                         }}
+                        checked={value.checked}
                       />
                       <label>{value.name}</label>
                     </li>
