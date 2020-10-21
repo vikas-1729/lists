@@ -3,7 +3,18 @@ import { connect } from 'react-redux';
 import { toggle } from '../action';
 
 class List extends Component {
-  handleToogle = (mainIndex, index) => {
+  handleToogle = (e, mainIndex, index) => {
+    let listItem = document.getElementById(`list-item${mainIndex}${index}`);
+    if (e.target.checked) {
+      listItem.style.backgroundColor = 'lightgreen';
+    } else {
+      if (mainIndex % 2 === 0) {
+        listItem.style.backgroundColor = '#f1f1f1';
+      } else {
+        listItem.style.backgroundColor = 'white';
+      }
+      //document.getElementById(`list-item${index}`).style.backgroundColor =
+    }
     this.props.dispatch(toggle(mainIndex, index));
   };
   render() {
@@ -23,11 +34,16 @@ class List extends Component {
               <ul className="list-item-content">
                 {list.values.map((value, index) => {
                   return (
-                    <li className="list-item-value" key={index}>
+                    <li
+                      className="list-item-value"
+                      id={`list-item${mainIndex}${index}`}
+                      key={index}
+                    >
                       <input
                         type="checkbox"
-                        onChange={() => {
-                          this.handleToogle(mainIndex, index);
+                        id={`checkbox${index}`}
+                        onChange={(e) => {
+                          this.handleToogle(e, mainIndex, index);
                         }}
                         checked={value.checked}
                       />

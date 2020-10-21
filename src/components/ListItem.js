@@ -4,11 +4,25 @@ import { makeFalse } from '../action';
 
 class ListItem extends Component {
   makeFalse = (mainIndex, index) => {
+    let listItem = document.getElementById(`list-item${mainIndex}${index}`);
+    if (mainIndex % 2 === 0) {
+      listItem.style.backgroundColor = '#f1f1f1';
+    } else {
+      listItem.style.backgroundColor = 'white';
+    }
+
     this.props.dispatch(makeFalse(mainIndex, index));
   };
   render() {
     const { lists } = this.props;
     let listChecked = findCheckedItem(lists);
+    if (listChecked.length === 0) {
+      return (
+        <div className="no-value">
+          <span>No item to display...</span>
+        </div>
+      );
+    }
     return (
       <div className="list-right-side">
         {listChecked.map((list, mainIndex) => {
@@ -22,9 +36,9 @@ class ListItem extends Component {
                       <div className="content">{value.name}</div>
                       <div className="img-container">
                         <img
-                          height="20"
-                          width="20"
-                          src="https://www.flaticon.com/svg/static/icons/svg/109/109602.svg"
+                          height="40"
+                          width="40"
+                          src="https://www.flaticon.com/svg/static/icons/svg/1214/1214428.svg"
                           alt="cross"
                           onClick={() => {
                             this.makeFalse(list.mainIndex, value.index);

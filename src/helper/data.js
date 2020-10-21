@@ -1,3 +1,4 @@
+// this is where we are handling data we can call it through api
 export const data = [
   {
     listName: 'Portugal',
