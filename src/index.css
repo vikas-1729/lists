@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: purple;
 }
 
 code {
@@ -24,6 +25,8 @@ code {
   height: 60px;
   align-items: center;
   border: 1px solid black;
+  margin-bottom: 5px;
+  background-color: white;
 }
 .logo img {
   height: 60px;
@@ -68,20 +71,23 @@ code {
 
 .content-body {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   margin-top: 10px;
   padding: 10px;
+  background-color: purple;
 }
 
 .left-div {
-  width: 50%;
+  width: 40%;
+  border: 1px solid black;
+  border-radius: 8px;
+  background-color: white;
 }
 .left-div .list {
   padding: 5px;
+  border: 1px solid black;
 }
 .left-div .list .list-item-left {
-  border: 2px solid black;
-  border-radius: 28px;
   display: flex;
   flex-direction: column;
   padding-left: 10px;
@@ -108,22 +114,27 @@ header {
 }
 
 .list-item-content {
-  padding: 0px;
+  padding: 2px;
+  margin: 0px 2px 2.5px 0px;
+}
+.list-item-left {
+  margin-top: 8px;
 }
 .list-item-value {
   list-style: none;
   margin-top: 5px;
-  padding: 5px;
+  padding: 0px 5px;
   display: flex;
   align-items: center;
 }
 
 input[type='checkbox'] {
-  height: 30px;
-  width: 30px;
+  height: 25px;
+  width: 25px;
 }
 input[type='checkbox']:hover {
-  height: 40px;
+  height: 28px;
+  width: 28px;
   cursor: pointer;
 }
 /* .list-item-value:hover {
@@ -138,7 +149,11 @@ input[type='checkbox']:hover {
 
 /**right side**/
 .right-div {
-  width: 48%;
+  width: 40%;
+  border: 1px solid black;
+  border-radius: 8px;
+  background-color: white;
+  padding: 5px;
 }
 .no-value {
   text-align: center;
@@ -171,11 +186,11 @@ input[type='checkbox']:hover {
   padding-left: 5px;
   background-color: #f1f1f1;
   align-items: center;
-  border-radius: 12px;
+  border-radius: 8px;
 }
 .list-item-value-right .content {
-  font-size: 1.5rem;
-  word-spacing: 18px;
+  font-size: 1.3rem;
+  word-spacing: 15px;
   font-weight: normal;
 }
 .img-container {
@@ -183,5 +198,4 @@ input[type='checkbox']:hover {
 }
 .img-container:hover {
   cursor: pointer;
-  background-color: red;
 }

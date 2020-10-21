@@ -36,9 +36,9 @@ class ListItem extends Component {
                       <div className="content">{value.name}</div>
                       <div className="img-container">
                         <img
-                          height="40"
-                          width="40"
-                          src="https://www.flaticon.com/svg/static/icons/svg/1214/1214428.svg"
+                          height="28"
+                          width="28"
+                          src="https://www.flaticon.com/svg/static/icons/svg/748/748122.svg"
                           alt="cross"
                           onClick={() => {
                             this.makeFalse(list.mainIndex, value.index);

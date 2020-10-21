@@ -12,7 +12,7 @@ function App() {
           />
         </div>
         <div className="heading-name">
-          <span>Header name</span>
+          <span>Check List</span>
         </div>
         <div className="header-list">
           <div className="header-list-div">
